@@ -394,4 +394,60 @@ table.imgtable, table.imgtable td {
         max-width: 100%;
         height: auto;
     }
+
+	/* =========================
+   Responsive FIX for jemdoc
+   ========================= */
+
+/* Ensure viewport never overflows */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Mobile & tablet fixes */
+@media (max-width: 900px) {
+
+    /* Remove nowrap that breaks layout */
+    #layout-menu {
+        white-space: normal !important;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        width: 100%;
+    }
+
+    /* Convert jemdoc table layout to block */
+    table#tlayout,
+    table#tlayout > tbody,
+    table#tlayout > tbody > tr,
+    table#tlayout > tbody > tr > td {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Prevent long text from being cut */
+    p, li, td, a, span {
+        word-wrap: break-word;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    /* Fix long links (arXiv, URLs, etc.) */
+    a {
+        display: inline;
+        white-space: normal;
+    }
+
+    /* Improve list readability */
+    ul, ol {
+        padding-left: 1.2em;
+    }
+
+    li {
+        margin-bottom: 0.6em;
+    }
+}
+
 }
