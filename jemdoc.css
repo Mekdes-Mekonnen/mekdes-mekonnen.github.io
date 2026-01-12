@@ -365,3 +365,33 @@ table.imgtable, table.imgtable td {
     border: none;
     text-align: left;
 }
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    #layout-menu {
+        display: block;
+        width: 100%;
+        white-space: normal;
+    }
+
+    #layout-content {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
+    table#tlayout,
+    table#tlayout tr,
+    table#tlayout td {
+        display: block;
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
